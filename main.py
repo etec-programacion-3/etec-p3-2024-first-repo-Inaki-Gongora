@@ -6,9 +6,21 @@ app = Flask(__name__)
 def hola():
     return "hola mundo"
 
-@app.route("/chau")
 
-def chau():
-    return "chau"
+
+@app.route("/chau")
+def goodbay():
+    return "chau bro"
+
+
+nombre = str(input())
+
+@app.route("/ruta/", defaults={"nombre":None})
+@app.route("/ruta/<nombre>")
+
+
+def func(nombre):
+    return "hola " + nombre
+
 
 app.run()
