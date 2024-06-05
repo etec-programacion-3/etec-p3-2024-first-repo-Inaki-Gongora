@@ -22,5 +22,8 @@ nombre = str(input())
 def func(nombre):
     return "hola " + nombre
 
+@app.route("/ruta/<nombre>/<apellido>")
+def nueva_ruta(nombre, apellido):
+    return f"¡Hola {nombre} {apellido}!"
 
 app.run()
